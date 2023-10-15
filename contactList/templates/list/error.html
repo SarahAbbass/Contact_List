@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Model Form</title>
+</head>
+<body>
+    <h1>Create My Model</h1>
+
+    {% if error_message %}
+    <div class="alert alert-danger">
+        {{ error_message }}
+    </div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="profession1">Profession 1:</label>
+        <input type="text" id="profession1" name="profession1">
+        <br>
+
+        <label for="profession2">Profession 2:</label>
+        <input type="text" id="profession2" name="profession2">
+        <br>
+
+        <input type="submit" value="Save">
+    </form>
+
+    <a href="{% url 'contact_list' %}">Back to Main Page</a>
+</body>
+</html>
